@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EventComponent } from './event/event.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     EventComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
