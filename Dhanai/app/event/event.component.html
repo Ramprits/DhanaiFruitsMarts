@@ -1,188 +1,23 @@
 <div class="main">
   <div class="section section-buttons">
     <div class="container">
-      <div class="tim-title">
-        <h2>Basic Elements</h2>
-      </div>
-      <div id="buttons">
-        <div class="tim-title">
-          <h3>Buttons
-            <br/>
-            <small>Pick your style</small>
-          </h3>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <button type="button" class="btn btn-danger">Default</button>
-            <button type="button" class="btn btn-danger btn-round">Round</button>
-            <button type="button" class="btn btn-danger btn-round"><i class="fa fa-heart"></i> With Icon</button>
-            <button type="button" class="btn btn-danger btn-just-icon"><i class="fa fa-heart"></i></button>
-            <button type="button" class="btn btn-danger btn-link">Simple</button>
-          </div>
-        </div>
-        <div class="tim-title">
-          <h3><small>Pick your size</small></h3>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <button type="button" class="btn btn-outline-danger btn-sm">Small</button>
-            <button type="button" class="btn btn-outline-danger">Regular</button>
-            <button type="button" class="btn btn-outline-danger btn-lg">Large</button>
-          </div>
-        </div>
-        <div class="tim-title">
-          <h3><small>Pick your color</small></h3>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <button type="button" class="btn btn-outline-default btn-round">Default</button>
-            <button type="button" class="btn btn-outline-primary btn-round">Primary</button>
-            <button type="button" class="btn btn-outline-info btn-round">Info</button>
-            <button type="button" class="btn btn-outline-success btn-round">Success</button>
-            <button type="button" class="btn btn-outline-warning btn-round">Warning</button>
-            <button type="button" class="btn btn-outline-danger btn-round">Danger</button>
-          </div>
-        </div>
-        <br/>
-        <div class="row">
-          <div class="col-md-8">
-            <button type="button" class="btn btn-default btn-round">Default</button>
-            <button type="button" class="btn btn-primary btn-round">Primary</button>
-            <button type="button" class="btn btn-info btn-round">Info</button>
-            <button type="button" class="btn btn-success btn-round">Success</button>
-            <button type="button" class="btn btn-warning btn-round">Warning</button>
-            <button type="button" class="btn btn-danger btn-round">Danger</button>
-          </div>
-        </div>
-      </div>
-      <br/>
-      <div class="tim-title">
-        <h3>Links</h3>
-      </div>
       <div class="row">
-        <div class="col-md-8">
-          <a href="#0" class="btn btn-link btn-default">Default</a>
-          <a href="#0" class="btn btn-link btn-primary">Primary</a>
-          <a href="#0" class="btn btn-link btn-success">Success</a>
-          <a href="#0" class="btn btn-link btn-info">Info</a>
-          <a href="#0" class="btn btn-link btn-warning">Warning</a>
-          <a href="#0" class="btn btn-link btn-danger">Danger</a>
-          <a href="#0" class="btn btn-link btn-neutral">Neutral</a>
-        </div>
-      </div>
-      <br/>
-      <div class="tim-title">
-        <h3>Inputs</h3>
-      </div>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Default">
+        <div class="col-md-5" *ngFor="let event of events">
+          <div class="card">
+            <!-- <img class="card-img-top" data-src="{{event.imageUrl}}" alt=""> -->
+            <div class="card-block">
+              <h4 class="card-title">{{event.name}}</h4>
+              <p class="card-text">Date: {{event?.date}}</p>
+              <p>Price: ${{event?.price}}</p>
+              <div *ngIf="event?.location">
+                <span>Location: {{event?.location?.address}}</span>
+                <span class="pad-left">{{event?.location?.city}}, {{event?.location?.country}}</span>
+              </div>
+              <div *ngIf="event?.onlineUrl">
+                Online URL: {{event?.onlineUrl}}
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="form-group has-success">
-            <input type="text" class="form-control form-control-success" id="inputSuccess1" value="Success">
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="form-group has-danger">
-            <input type="text" class="form-control form-control-danger" id="inputDanger1" value="Error">
-            <div class="form-control-feedback">Sorry, that username's taken. Try another?</div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-group" aria-hidden="true"></i></span>
-          </div>
-        </div>
-      </div>
-      <br/>
-      <div class="row">
-        <div class="col-sm-6 col-lg-3">
-          <div class="tim-title">
-            <h3>Checkboxes</h3>
-          </div>
-          <div class="checkbox">
-            <input id="checkbox1" type="checkbox">
-            <label for="checkbox1">
-                                    Unchecked
-                                </label>
-          </div>
-          <div class="checkbox">
-            <input id="checkbox2" type="checkbox" checked="">
-            <label for="checkbox2">
-                                    Checked
-                                </label>
-          </div>
-          <div class="checkbox">
-            <input id="checkbox3" type="checkbox" disabled="">
-            <label for="checkbox3">
-                                    Disabled unchecked
-                                </label>
-          </div>
-          <div class="checkbox">
-            <input id="checkbox4" type="checkbox" checked="" disabled="">
-            <label for="checkbox4">
-                                   Disabled checked
-                               </label>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="tim-title">
-            <h3>Radio Buttons</h3>
-          </div>
-          <div class="radio">
-            <input type="radio" name="radio1" id="radio1" value="option1">
-            <label for="radio1">
-                                    Radio is off
-                                </label>
-          </div>
-
-          <div class="radio">
-            <input type="radio" name="radio1" id="radio2" value="option2" checked="">
-            <label for="radio2">
-                                    Radio is on
-                                </label>
-          </div>
-
-          <div class="radio">
-            <input type="radio" name="radio3" id="radio3" value="option3" disabled="">
-            <label for="radio3">
-                                    Disabled radio is off
-                                </label>
-          </div>
-
-          <div class="radio">
-            <input type="radio" name="radio4" id="radio4" value="option4" checked="" disabled="">
-            <label for="radio4">
-                                    Disabled radio is on
-                                </label>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="tim-title">
-            <h3>Toggle Buttons</h3>
-          </div>
-          <div class="togglebutton">
-            <label>
-				                	<input type="checkbox" data-toggle="switch" checked=""><span class="toggle"></span> Toggle is on
-				            	</label>
-          </div>
-          <div class="togglebutton">
-            <label>
-				                	<input type="checkbox" data-toggle="switch"><span class="toggle"></span> Toggle is off
-				            	</label>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="tim-title">
-            <h3>Sliders</h3>
-          </div>
-          <div id="sliderRegular" class="slider noUi-target noUi-ltr noUi-horizontal noUi-connect"></div>
-          <br/>
-          <div id="sliderDouble" class="slider slider-info noUi-target noUi-ltr noUi-horizontal noUi-background"></div>
         </div>
       </div>
     </div>

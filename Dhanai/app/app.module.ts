@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EventComponent } from './event/event.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { NavComponent } from './nav/nav.component';
+import { EventService } from './event/shared/event.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { NavComponent } from './nav/nav.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
