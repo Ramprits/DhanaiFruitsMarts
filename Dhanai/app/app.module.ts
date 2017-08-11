@@ -8,6 +8,7 @@ import { EventComponent } from './event/event.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { NavComponent } from './nav/nav.component';
 import { EventService } from './event/shared/event.service';
+import { EventDetailComponent } from './event/event-detail/event-detail.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { EventService } from './event/shared/event.service';
     DashboardComponent,
     EventComponent,
     EmployeeComponent,
-    NavComponent
+    NavComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,
