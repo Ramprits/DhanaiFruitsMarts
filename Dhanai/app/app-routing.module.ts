@@ -10,7 +10,7 @@ import { EventRouteActivatorGuard } from './event/shared/event-route-activator.g
 const routes: Routes = [
 
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'events/new', component: NewEventComponent },
+  { path: 'events/new', component: NewEventComponent, canDeactivate: ['canDeactivateNewEvent'] },
   { path: 'events', component: EventComponent },
   { path: 'events/:id', component: EventDetailComponent, canActivate: [EventRouteActivatorGuard] },
   { path: 'error', component: ErrorComponent },

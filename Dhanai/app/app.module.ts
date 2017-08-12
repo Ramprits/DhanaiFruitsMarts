@@ -32,7 +32,23 @@ import { EventRouteActivatorGuard } from './event/shared/event-route-activator.g
     AppRoutingModule,
     FormsModule
   ],
-  providers: [EventService, ToastrService, EventRouteActivatorGuard],
+  providers: [
+    EventService,
+    ToastrService,
+    EventRouteActivatorGuard,
+    {
+      provide: 'canDeactivateNewEvent',
+      useValue: checkDirtyState
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}
+function checkDirtyState(component: NewEventComponent) {
+  if (component.isDirty) {
+    return window.confirm('Are you sure want to more without saving data ');
+  }
+  return true;
+}

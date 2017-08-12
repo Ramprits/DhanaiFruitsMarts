@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./new-event.component.scss']
 })
 export class NewEventComponent implements OnInit {
-
+  isDirty = true;
   constructor(private router: Router) { }
   userName = 'Bob';
   email: string;
