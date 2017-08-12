@@ -1,0 +1,43 @@
+<form #newUserForm="ngForm" (ngSubmit)="onSubmit(newUserForm)" style="width:40%;">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="User name" required maxlength="25" [(ngModel)]="userName" name="userName"
+      #pickedName="ngModel">
+
+    <div *ngIf="!pickedName.valid && pickedName.touched" class="text-danger">
+      User name is required!
+    </div>
+
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" placeholder="Email" required [(ngModel)]="email" name="email" #userEmail="ngModel">
+    <div *ngIf="!userEmail.valid && userEmail.touched" class="text-danger">
+      Email is required!
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Nick name" [(ngModel)]="nickName" name="nickName">
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control" placeholder="Password" required [(ngModel)]="password" name="password" #userPassword="ngModel">
+    <div *ngIf="!userPassword.valid && userPassword.touched" class="text-danger">
+      Password is required!
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="submit" [disabled]="!newUserForm.form.valid" class="btn btn-sm btn-primary">
+    Register
+  </button>
+
+    <button type="submit" (click)="reset()" class="btn btn-sm btn-danger">
+    Reset
+  </button>
+  </div>
+</form>
+<div class="sr-only">
+  <pre>{{ newUserForm.form.value | json }}</pre>
+  <!-- Value of whole form -->
+  <pre>User name: {{ pickedName.value }}</pre>
+  <!-- Value of userName field -->
+  <pre>Valid form? {{ newUserForm.form.valid | json }}</pre>
+  <!-- Validity of whole form -->
+</div>

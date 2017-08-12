@@ -9,6 +9,12 @@ import { EmployeeComponent } from './employee/employee.component';
 import { NavComponent } from './nav/nav.component';
 import { EventService } from './event/shared/event.service';
 import { EventDetailComponent } from './event/event-detail/event-detail.component';
+import { ToastrService } from './common/toastr.service';
+import { NewEventComponent } from './event/new-event/new-event.component';
+import { FormsModule } from '@angular/forms';
+import { ErrorComponent } from './error/error.component';
+import { EventRouteActivatorGuard } from './event/shared/event-route-activator.guard';
+
 
 @NgModule({
   declarations: [
@@ -17,13 +23,16 @@ import { EventDetailComponent } from './event/event-detail/event-detail.componen
     EventComponent,
     EmployeeComponent,
     NavComponent,
-    EventDetailComponent
+    EventDetailComponent,
+    NewEventComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [EventService],
+  providers: [EventService, ToastrService, EventRouteActivatorGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
