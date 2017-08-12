@@ -1,3 +1,9 @@
-<p>
-  employee works!
-</p>
+<div class="row">
+  <div class="col-md-5" *ngFor="let employee of employees">
+    <div class="card" [routerLink]="['/employee/employees', employee.employeeId]">
+      <div class="card-block">
+        <h4 class="card-title name">{{employee.name}}</h4>
+      </div>
+    </div>
+  </div>
+</div>

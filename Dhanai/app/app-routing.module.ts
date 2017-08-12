@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EventComponent } from './event/event.component';
-import { EventDetailComponent } from './event/event-detail/event-detail.component';
-import { NewEventComponent } from './event/new-event/new-event.component';
 import { ErrorComponent } from './error/error.component';
-import { EventRouteActivatorGuard } from './event/shared/event-route-activator.guard';
-
+import {
+  EventDetailComponent,
+  NewEventComponent,
+  EventRouteActivatorGuard
+} from './event/index';
 const routes: Routes = [
 
   { path: 'dashboard', component: DashboardComponent },
