@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EventComponent } from './event/event.component';
-import { EmployeeComponent } from './employee/employee.component';
 import { NavComponent } from './nav/nav.component';
 import { EventService } from './event/shared/event.service';
 import { EventDetailComponent } from './event/event-detail/event-detail.component';
@@ -21,7 +20,6 @@ import { EventRouteActivatorGuard } from './event/shared/event-route-activator.g
     AppComponent,
     DashboardComponent,
     EventComponent,
-    EmployeeComponent,
     NavComponent,
     EventDetailComponent,
     NewEventComponent,

@@ -8,11 +8,12 @@ import { ToastrService } from '../common/toastr.service';
   styleUrls: ['./event.component.scss']
 })
 export class EventComponent implements OnInit {
-  events: any[];
+  events: any;
+  currentDate = '20/09/2017';
   constructor(private eventService: EventService, private toastrService: ToastrService) { }
 
   ngOnInit() {
-    this.events = this.eventService.getEvents();
+    this.eventService.getEvents().subscribe(events => { this.events = events; });
   }
 
 }

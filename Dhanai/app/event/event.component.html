@@ -1,25 +1,26 @@
 <div class="main">
-  <div class="section section-buttons">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-5" *ngFor="let event of events">
-          <div class="card bg-info" [routerLink]="['/events', event.id]">
-            <!-- <img class="card-img-top" data-src="{{event.imageUrl}}" alt=""> -->
-            <div class="card-block">
-              <h4 class="card-title">{{event.name}}</h4>
-              <p class="card-text">Date: {{event?.date}}</p>
-              <p>Price: ${{event?.price}}</p>
-              <div *ngIf="event?.location">
-                <span>Location: {{event?.location?.address}}</span>
-                <span class="pad-left">{{event?.location?.city}}, {{event?.location?.country}}</span>
-              </div>
-              <div *ngIf="event?.onlineUrl">
-                Online URL: {{event?.onlineUrl}}
-              </div>
+  <div class="container" *ngIf="events">
+    <h2>Up-Comming Angular 4 Events {{currentDate}}</h2>
+    <hr>
+    <div class="row">
+      <div class="col-md-5" *ngFor="let event of events">
+        <div class="card bg-info" [routerLink]="['/events', event.id]">
+          <!-- <img class="card-img-top" data-src="{{event.imageUrl}}" alt=""> -->
+          <div class="card-block">
+            <h4 class="card-title">{{event.name}}</h4>
+            <p class="card-text">Date: {{event?.date}}</p>
+            <p>Price: ${{event?.price}}</p>
+            <div *ngIf="event?.location">
+              <span>Location: {{event?.location?.address}}</span>
+              <span class="pad-left">{{event?.location?.city}}, {{event?.location?.country}}</span>
+            </div>
+            <div *ngIf="event?.onlineUrl">
+              Online URL: {{event?.onlineUrl}}
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>
