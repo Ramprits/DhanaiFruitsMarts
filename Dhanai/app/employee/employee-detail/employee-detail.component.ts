@@ -10,9 +10,10 @@ import { Observable } from 'rxjs/Observable';
 })
 export class EmployeeDetailComponent implements OnInit {
   employee: any;
-  constructor(private employeeService: EmployeeService, private router: ActivatedRoute) { }
+  constructor(private employeeService: EmployeeService, private route: ActivatedRoute) { }
   ngOnInit() {
-    this.employee = this.employeeService.getEmployee(+this.router.params['employeeId']);
+    this.employeeService.getEmployee(+this.route.snapshot.params['employeeId'])
+      .subscribe(employees => { this.employee = employees; });
   }
 
 }

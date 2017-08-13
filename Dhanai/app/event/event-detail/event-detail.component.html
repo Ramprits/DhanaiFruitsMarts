@@ -1,18 +1,9 @@
-<div class="card bg-info">
-  <img class="card-img-top img" [src]="event?.imageUrl" [alt]="event?.name">
+
+<div class="card card-inverse mr-5" id="cardEventDetails">
+  <img class="card-img-top img-fluid" [src]="event?.imageUrl" [alt]="event?.name">
   <div class="card-block">
-    <div class="row">
-      <div class="col-md-6">
-        <h3>{{event?.name}} </h3>
-        <div><strong>Date:</strong> {{event?.date}}</div>
-        <div><strong>Time:</strong> {{event?.time}}</div>
-        <div><strong>Price:</strong> ${{event?.price}}</div>
-        <address *ngIf="event?.location">
-          <strong>Address:</strong><br /> {{event?.location?.address}}
-          <br /> {{event?.location?.city}}, {{event?.location?.country}}
-        </address>
-      </div>
-    </div>
+    <h4 class="card-title text-primary">{{event?.name}}</h4>
+    <p class="card-text text-primary"><strong>Date:</strong> {{event?.date}}</p>
+    <button type="button" class="btn btn-info btn-sm" [routerLink]="['/events']">Back</button>
   </div>
 </div>
-  <button type="button" class="btn btn-info-outline btn-sm" [routerLink]="['/events']">Back</button>
