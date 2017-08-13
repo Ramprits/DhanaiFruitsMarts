@@ -1,9 +1,11 @@
 <div class="row">
-  <div class="col-md-5" *ngFor="let employee of employees">
-    <div class="card" [routerLink]="['/employee/employees', employee.employeeId]">
+  <div class="col-md-5 col-sm-12 offset-1" *ngFor="let employee of (employees ? employees.slice(0,5):[]); let i = index; ">
+    <div class="card pt-2 mt-2" [routerLink]="['/employee/employees', employee.employeeId]">
       <div class="card-block">
-        <h4 class="card-title name">{{employee.name}}</h4>
+        <h4>{{employee.firstName}}</h4>
+        <h4>{{employee.lastName}}</h4>
+        <h4>{{employee.title}}</h4>
+        <h4>{{employee.address}}</h4>
       </div>
     </div>
   </div>
-</div>

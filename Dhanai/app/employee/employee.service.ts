@@ -6,14 +6,15 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class EmployeeService {
-    baseUrl = 'http://localhost:51383/api/Employees';
+    handleError: any;
+    baseUrl = 'http://localhost:51383/api/EmployeesData';
     constructor(private http: Http) { }
-    getEmployees() {
+    getEmployees(): Observable<any[]> {
         return this.http.get(this.baseUrl)
             .map((response: Response) => response.json());
     }
     getEmployee(employeeId: number) {
-        const url = `{this.baseUrl}/${employeeId}`;
+        const url = `${this.baseUrl}/${employeeId}`;
         return this.http.get(url)
             .map((response: Response) => response.json());
     }
