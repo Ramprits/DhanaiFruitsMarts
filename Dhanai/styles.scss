@@ -6,3 +6,14 @@ li>a.active{
     color: whitesmoke !important;
     opacity: 2.5;
 }
+.navbar-brand{
+    margin-left: 100px !important;
+}
+@media (min-width:400px){
+    navbar-brand{
+        margin-left: 0px !important; 
+    }}
+    @media (min-width:700px){
+        navbar-brand{
+            margin-left: 0px !important; 
+        }}

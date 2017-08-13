@@ -19,7 +19,7 @@
 
 <body>
   <!--    navbar come here          -->
-  <nav class="navbar navbar-toggleable-md fixed-top bg-info">
+  <nav class="navbar navbar-toggleable-md fixed-top bg-info nav-down">
     <div class="navbar-translate">
       <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,10 +27,10 @@
                     <span class="navbar-toggler-bar"></span>
                     <span class="navbar-toggler-bar"></span>
                 </button>
-      <a class="navbar-brand" href="/dashboard">Dhanai Fruits Marts</a>
+      <a class="navbar-brand col-sm-12" href="/dashboard">Dhanai Fruits Marts</a>
     </div>
     <div class="collapse navbar-collapse navbar-right" id="navbarNavDropdown">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="/events" routerLinkActive="active">Home</a>
         </li>
@@ -38,8 +38,7 @@
           <a class="nav-link" href="#" routerLinkActive="active">About</a>
         </li>
         <li class="nav-item dropdown dropdown-danger">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" 
-          href="javascript:void(0)">Employees</a>
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Employees</a>
           <ul class="dropdown-menu dropdown-menu-right">
             <li class="dropdown-item"><a href="/events"><i class="nc-icon nc-bank"></i>&nbsp; Events</a></li>
             <li class="dropdown-item"><a href="events/new"><i class="nc-icon nc-basket"></i>&nbsp; New Events</a></li>
@@ -48,13 +47,15 @@
             <li class="dropdown-item"><a href="examples/contact-us.html"><i class="nc-icon nc-mobile"></i>&nbsp; Contact Us</a></li>
             <li class="dropdown-item"><a href="examples/discover.html"><i class="nc-icon nc-world-2"></i>&nbsp; Discover</a></li>
             <li class="dropdown-item"><a href="examples/ecommerce.html"><i class="nc-icon nc-send"></i>&nbsp; Ecommerce</a></li>
-           <li class="dropdown-item"><a href="examples/twitter-redesign.html"><i class="nc-icon nc-tie-bow"></i>&nbsp; Twitter</a></li>
+            <li class="dropdown-item"><a href="examples/twitter-redesign.html"><i class="nc-icon nc-tie-bow"></i>&nbsp; Twitter</a></li>
           </ul>
         </li>
 
       </ul>
     </div>
+    
   </nav>
+
   <!-- end navbar  -->
   <div class="container" style="margin-top: 100px;">
     <yo-root></yo-root>
