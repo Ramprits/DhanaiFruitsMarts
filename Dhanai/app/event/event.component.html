@@ -1,11 +1,11 @@
-<div class="main">
+<div class="main offset-2 col-md-10">
   <div class="container" *ngIf="events">
-    <h2>Up-Comming Angular 4 Events {{currentDate}}</h2>
+    <h2 class="">Up-Comming Angular 4 Events {{currentDate}}</h2>
     <hr>
     <div class="row">
-      <div class="col-md-5" *ngFor="let event of events">
+      <div class="offset-2 col-md-10" *ngFor="let event of events">
         <div class="card bg-info" [routerLink]="['/events', event.id]">
-          <!-- <img class="card-img-top" data-src="{{event.imageUrl}}" alt=""> -->
+          <img class="card-img-top" style="background-image: url('assets/img/city_bg.jpg')">
           <div class="card-block">
             <h4 class="card-title">{{event.name}}</h4>
             <p class="card-text">Date: {{event?.date}}</p>

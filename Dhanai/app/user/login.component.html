@@ -1,21 +1,26 @@
-<div id="login" class="row">
-  <div class="col-md-6 col-sm-12 offset-2">
-    <h1 class="h1">Login</h1>
-    <hr>
-    <div class='uil-reload-css reload-small'>
-      <div></div>
+<div class="col-md-6 col-sm-12 offset-2">
+  <form #newUserForm="ngForm" (ngSubmit)="onSubmit(newUserForm)">
+    <div class="form-group">
+      <input type="text" placeholder="User name" class="form-control" required maxlength="25" [(ngModel)]="userName" name="userName"
+        #pickedName="ngModel">
+      <div *ngIf="!pickedName.valid && pickedName.touched">
+        User name is required!
+      </div>
     </div>
-    <form autocomplete="off" #loginForm="">
-      <div class="form-group">
-        <label for="userName">User Name:</label>
-        <input id="userName" type="text" class="form-control" placeholder="User Name..." />
+    <div class="form-group">
+      <input type="password" placeholder="Password" class="form-control" required [(ngModel)]="password" name="password" #userPassword="ngModel">
+      <div *ngIf="!userPassword.valid && userPassword.touched">
+        Password is required!
       </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input id="password" type="password" class="form-control" placeholder="Password..." />
-      </div>
-      <button type="submit" class="btn btn-primary">Login</button>
-      <button type="button" class="btn btn-danger">Cancel</button>
-    </form>
-  </div>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary" [disabled]="!newUserForm.form.valid">
+        Register
+      </button>
+
+      <button type="button" class="btn btn-danger" (click)="newUserForm.reset()">
+        Reset
+      </button>
+    </div>
+  </form>
 </div>
